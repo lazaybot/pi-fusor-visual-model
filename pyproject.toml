@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pi-fusor-visual-model"
+version = "0.1.0"
+description = "Safe Raspberry Pi LED and screen imitation of fusor plasma behavior"
+requires-python = ">=3.9"
+license = "BSD-3-Clause"
+authors = [{name = "Jaden LyTran"}]
+dependencies = []
+
+[project.optional-dependencies]
+hardware = ["rpi-ws281x>=5.0"]
+plot = ["matplotlib>=3.7"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+fusor-visual = "fusor_visual.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["fusor_visual*"]
